@@ -75,7 +75,6 @@
 
     Module.prototype.init = function(){
         this.setTarget();
-        this.setAnimateParam();
     };
 
     Module.prototype.setTarget = function(){
@@ -90,6 +89,7 @@
 
     Module.prototype.setClickEvent = function(){
         this.$root.on( "click", ()=>{
+            this.setAnimateParam();
             this.moveAnchor();
             return false;
         });

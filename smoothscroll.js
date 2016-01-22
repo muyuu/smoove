@@ -80,7 +80,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     Module.prototype.init = function () {
         this.setTarget();
-        this.setAnimateParam();
     };
 
     Module.prototype.setTarget = function () {
@@ -97,6 +96,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var _this = this;
 
         this.$root.on("click", function () {
+            _this.setAnimateParam();
             _this.moveAnchor();
             return false;
         });
