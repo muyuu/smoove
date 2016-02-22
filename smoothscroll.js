@@ -43,7 +43,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         var $list;
         if (isUndefined(opt.root)) $list = $(rootElement);
-        if (!isUndefined(opt.root)) $list = opt.root instanceof jQuery ? param.root : $(param.root);
+        if (!isUndefined(opt.root)) $list = opt.root instanceof $ ? param.root : $(param.root);
 
         var length = $list.length;
         var mappedlist = [];
