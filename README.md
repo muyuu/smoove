@@ -1,4 +1,4 @@
-# antibase-smoothscroll
+# smoove
 
 this code is javascript smoothscroll library for browser(contain ie8).
 
@@ -6,7 +6,7 @@ this code is javascript smoothscroll library for browser(contain ie8).
 - jquery@1.12.0
 
 ## install
-npm install --save-dev antibase-smoothscroll
+npm install --save-dev smoove
 
 ## usage
 
@@ -14,7 +14,7 @@ npm install --save-dev antibase-smoothscroll
 
 - html
 ```
-<a class="js-smoothscroll" href="#abc">anchor link</a>
+<a class="js-smoove" href="#abc">anchor link</a>
 
 <div id="abc">
     <!-- code -->
@@ -23,9 +23,9 @@ npm install --save-dev antibase-smoothscroll
 
 - javascript
 ```
-var smoothscroll = require("smoothscroll");
+var smoove = require("smoove");
 
-smoothscroll();
+smoove();
 
 ```
 
@@ -33,7 +33,7 @@ smoothscroll();
 
 - html
 ```
-<a class="js-smoothscroll" href="#abc">anchor link</a>
+<a class="js-smoove" href="#abc">anchor link</a>
 
 <div id="abc">
     <!-- code -->
@@ -41,11 +41,11 @@ smoothscroll();
 
 ...
 
-<script src="smoothscroll.js"></script>
+<script src="smoove.js"></script>
 <script src="app.js"></script>
 ```
 
 - javascript
 ```
-uiSmoothscroll();
+smoove();
 ```

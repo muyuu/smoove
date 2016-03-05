@@ -2,15 +2,20 @@ const g = require("gulp");
 const $ = require( 'gulp-load-plugins' )();
 const connect = require('gulp-connect');
 
+const filename = 'smoove';
+const file = `${filename}.js`;
+
+const port = 3000
+
 // local server
 g.task("connect", () => {
     connect.server({
-        port      : 3000,
+        port      : port,
         livereload: true
     });
 
     options = {
-        url: `http://localhost:#{port}`,
+        url: `http://localhost:${port}`,
         app: `Google Chrome`
     };
 
@@ -19,7 +24,8 @@ g.task("connect", () => {
 });
 
 g.task('babel', ()=>{
-    g.src(['src/smoothscroll.js'])
+    console.log(`src/${file}`);
+    g.src(`src/${file}`)
         .pipe($.babel({
             presets: ['es2015']
         }))
@@ -27,14 +33,14 @@ g.task('babel', ()=>{
 });
 
 g.task('lint', ()=>{
-    g.src(['smoothscroll.js', 'app.js'])
+    g.src([`src/${file}`])
         .pipe($.eslint())
-        .pipe($.eslint.format());
+        .pipe($.eslint.formatEach());
 });
 
 
 g.task('jscs', ()=>{
-    g.src(['smoothscroll.js', 'app.js'])
+    g.src(file)
         .pipe($.jscs());
 });
 
@@ -43,16 +49,16 @@ g.task('dev', ['babel'], ()=>{
 });
 
 g.task("default", ['connect'], ()=>{
-    g.watch("**/*.js", ["dev"]);
+    g.watch("src/**/*.js", ["dev"]);
 });
 
 
  //build
 g.task('build', ()=>{
-    g.src('./smoothscroll.js')
+    g.src(file)
         .pipe($.sourcemaps.init())
         .pipe($.rename({
-            basename: "smoothscroll.min",
+            basename: `${filename}.min`,
             extname: ".js"
         }))
         .pipe($.uglify())

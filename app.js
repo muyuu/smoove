@@ -1,5 +1,5 @@
 (function(w, $){
   $(function(){
-    uiSmoothscroll();
+    smoove();
   });
 })(window, jQuery);
