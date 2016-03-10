@@ -5,7 +5,7 @@ const connect = require('gulp-connect');
 const filename = 'smoove';
 const file = `${filename}.js`;
 
-const port = 3000
+const port = 4000
 
 // local server
 g.task("connect", () => {
@@ -15,7 +15,7 @@ g.task("connect", () => {
     });
 
     options = {
-        url: `http://localhost:${port}`,
+        uri: `http://localhost:${port}/index.html`,
         app: `Google Chrome`
     };
 
