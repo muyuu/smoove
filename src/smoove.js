@@ -57,6 +57,7 @@
         this.opt = {
             speed: !isUndefined(opt.speed) ? opt.speed : 500,
             easing: !isUndefined(opt.easing) ? opt.easing : "swing",
+            offset: !isUndefined(opt.offset) ? opt.offset : 0
         };
 
         // elements
@@ -84,7 +85,7 @@
 
     Module.prototype.setAnimateParam = function(){
         this.animateParam = {
-            scrollTop: this.$target.offset().top
+            scrollTop: this.$target.offset().top - this.opt.offset
         };
         return this;
     };

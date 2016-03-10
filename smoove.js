@@ -62,7 +62,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         // options
         this.opt = {
             speed: !isUndefined(opt.speed) ? opt.speed : 500,
-            easing: !isUndefined(opt.easing) ? opt.easing : "swing"
+            easing: !isUndefined(opt.easing) ? opt.easing : "swing",
+            offset: !isUndefined(opt.offset) ? opt.offset : 0
         };
 
         // elements
@@ -89,7 +90,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     Module.prototype.setAnimateParam = function () {
         this.animateParam = {
-            scrollTop: this.$target.offset().top
+            scrollTop: this.$target.offset().top - this.opt.offset
         };
         return this;
     };

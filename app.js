@@ -1,5 +1,7 @@
 (function(w, $){
   $(function(){
-    smoove();
+    smoove({
+        offset: 50
+    });
   });
 })(window, jQuery);
