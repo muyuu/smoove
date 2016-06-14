@@ -54,7 +54,7 @@ g.task("default", ['connect'], ()=>{
 
 
  //build
-g.task('build', ()=>{
+g.task('build', ['dev'], ()=>{
     g.src(file)
         .pipe($.sourcemaps.init())
         .pipe($.rename({
