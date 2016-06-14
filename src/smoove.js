@@ -16,7 +16,7 @@
     // -------------------------------------------------------
     // utility functions
     // -------------------------------------------------------
-    const isUndefined = (obj)=>{ return obj === void 0; }
+    const isUndefined = (obj)=>{ return obj === void 0; };
 
     // -------------------------------------------------------
     // module
@@ -40,11 +40,11 @@
 
         var length = $list.length;
         var mappedlist = [];
-        for (var i = 0; i < length; i++) {
+        for (var i = 0; i < length; i++){
             mappedlist[i] = new Module(opt, $list[i]);
-        };
+        }
         return mappedlist;
-    }
+    };
 
 
     /**
@@ -55,7 +55,7 @@
 
         // options
         this.opt = {
-            speed: !isUndefined(opt.speed) ? opt.speed : 500,
+            speed : !isUndefined(opt.speed) ? opt.speed : 500,
             easing: !isUndefined(opt.easing) ? opt.easing : "swing",
             offset: !isUndefined(opt.offset) ? opt.offset : 0
         };
@@ -65,8 +65,7 @@
         this.href = this.$root.attr("href");
 
         // false no have id at target
-        if( !$(this.href)[0] ) throw new Error("have to attribute id assigned anchor");
-
+        if (!$(this.href)[0]) throw new Error("have to attribute id assigned anchor");
 
         this.init();
 
@@ -74,14 +73,17 @@
         this.setClickEvent();
     }
 
+
     Module.prototype.init = function(){
         this.setTarget();
     };
+
 
     Module.prototype.setTarget = function(){
         this.$target = $(this.href);
         return this;
     };
+
 
     Module.prototype.setAnimateParam = function(){
         this.animateParam = {
@@ -90,16 +92,18 @@
         return this;
     };
 
+
     Module.prototype.setClickEvent = function(){
-        this.$root.on( "click", ()=>{
+        this.$root.on("click", ()=>{
             this.setAnimateParam()
                 .moveAnchor();
             return false;
         });
     };
 
+
     Module.prototype.moveAnchor = function(){
-        $("html, body").animate( this.animateParam, this.opt.speed, this.opt.easing );
+        $("html, body").animate(this.animateParam, this.opt.speed, this.opt.easing);
         return this;
     };
 

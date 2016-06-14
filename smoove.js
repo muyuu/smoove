@@ -49,7 +49,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var mappedlist = [];
         for (var i = 0; i < length; i++) {
             mappedlist[i] = new Module(opt, $list[i]);
-        };
+        }
         return mappedlist;
     };
 
