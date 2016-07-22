@@ -3,7 +3,7 @@
 this code is javascript smoothscroll library for browser(contain ie8).
 
 ## dependences
-- jquery@1.12.0
+- jquery 1.12.0 ~
 
 ## install
 npm install --save-dev smoove
