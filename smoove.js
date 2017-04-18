@@ -89,8 +89,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     };
 
     Module.prototype.setAnimateParam = function () {
+        var offset = this.opt.offset;
+        if (typeof offset === 'function') offset = offset();
+
         this.animateParam = {
-            scrollTop: this.$target.offset().top - this.opt.offset
+            scrollTop: this.$target.offset().top - offset
         };
         return this;
     };

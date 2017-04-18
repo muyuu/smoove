@@ -86,8 +86,11 @@
 
 
     Module.prototype.setAnimateParam = function(){
+        let offset = this.opt.offset;
+        if(typeof offset === 'function') offset = offset();
+
         this.animateParam = {
-            scrollTop: this.$target.offset().top - this.opt.offset
+            scrollTop: this.$target.offset().top - offset
         };
         return this;
     };
