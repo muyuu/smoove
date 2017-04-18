@@ -1,7 +1,10 @@
 (function(w, $){
   $(function(){
     smoove({
-        offset: 50
+        offset: ()=>{
+            console.log("run offset option's callback");
+            return 50;
+        }
     });
   });
 })(window, jQuery);
